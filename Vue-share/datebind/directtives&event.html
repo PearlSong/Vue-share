@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>指令与事件</title>
+</head>
+<body>
+<div id="app">
+    <p v-if="show">显示这段文本</p>
+    <a :href="url"></a><!--v-bind 可以简写成：，动态更新html元素上的属性，如：ID，class-->
+    <img :src="imgUrl" alt="">
+    <button @click="handleClose">click hide</button><!--v-on 可以简写成@绑定事件监听器-->
+    <button @click="show=false">click hide</button>
+</div>
+</body>
+</html>
+<script src="../js/vue2.4.2.js"></script>
+<script>
+    /*new Vue({
+        el:'#app',
+        data:{
+            show:true,
+            url:'https://www.github.com',
+            imgUrl:'http://xxx.xxx.xx/img.png'
+        },
+        methods:{
+            handleClose:function(){
+                this.show=false;
+            }
+        }
+    })*/
+</script>
+
+<!--另外一种实现方法-->
+<!--
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            show:true,
+            url:'https://www.github.com',
+            imgUrl:'http://xxx.xxx.xx/img.png'
+        },
+        methods:{
+            handleClose:function(){
+                this.close();
+            },
+            close:function(){
+                this.show=false;
+            }
+        }
+    })
+</script>-->
+<script>
+    let app=new Vue({
+        el:'#app',
+        data:{
+            show:true,
+            url:'https://www.github.com',
+            imgUrl:'http://xxx.xxx.xx/img.png'
+        },
+        methods:{
+            init:function(text){
+              console.log(text);
+            },
+            handleClose:function(){
+                this.close();
+            },
+            close:function(){
+                this.show=false;
+            }
+        },
+        mounted:function(){
+            this.init('在初始化时调用');
+        }
+    });
+    app.init('在外部调用');
+</script>

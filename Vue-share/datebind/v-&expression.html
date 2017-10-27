@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插值和表达式</title>
+</head>
+<body>
+<div id="app">
+    <span v-html="link"></span><br><!--绑定的是html-->
+    <span v-pre>{{这段文字不被编译}}</span><br><!--跳过这个元素和它的子元素的编译-->
+    {{number/10}}<br><!--简单运算-->
+    {{isOk?'true':'false'}}<br><!--三元运算-->
+    {{text.split(',').reverse().join(',')}}<!--处理字符串-->
+</div>
+</body>
+</html>
+<script src="../js/vue2.4.2.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            link:'<a href="#">这是一个a标签</a>',
+            number:100,
+            isOk:false,
+            text:'123,456'
+        }
+    })
+</script>
