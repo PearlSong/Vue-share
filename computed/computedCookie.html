@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性缓存</title>
+</head>
+<body>
+<div id="app">
+    <!--注意，reversedText是方法，所以要带()-->
+    {{reversedText()}}
+    {{now}}
+    {{val}}
+</div>
+</body>
+</html>
+<script src="../js/vue2.4.2.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            text:'123,456'
+        },
+        methods:{
+            reversedText:function(){
+                return this.text.split(',').reverse().join(',');
+            }
+        },
+        computed:{
+            now:function(){
+                return Date.now();
+            },
+            val:function(){
+                return this.text='333';
+            }
+        }
+    })
+</script>
