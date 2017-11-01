@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>了解v-bind指令</title>
+</head>
+<body>
+<div id="app">
+    <!--根据语法糖，v-bind可以简写为:-->
+    <a :href="url">链接</a>
+    <img :src="imgUrl" alt="">
+</div>
+</body>
+</html>
+<script src="../js/vue2.4.2.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            url:'https://www.xxxxxx.com',
+            imgUrl:'https://www.xxxxxx.com'
+        }
+    })
+</script>

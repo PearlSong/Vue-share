@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在组件上使用</title>
+    <script src="../js/vue2.4.2.js"></script>
+    <script>
+        Vue.component('my-component',{
+            template:'<p class="article">文本</p>'
+        });
+    </script>
+</head>
+<body>
+<div id="app">
+    <my-component :class="{'active':isActive}"></my-component>
+</div>
+</body>
+</html>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            isActive:true
+        }
+    })
+</script>

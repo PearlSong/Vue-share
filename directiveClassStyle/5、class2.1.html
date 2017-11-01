@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组语法2</title>
+</head>
+<body>
+<div id="app">
+    <!--使用三元表达式来根据条件切换class-->
+    <!--<div :class="[isActive ? activeCls : '',errorCls]"></div>-->
+    <div :class="[{'active' : isActive},errorCls]"></div>
+</div>
+</body>
+</html>
+<script src="../js/vue2.4.2.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        /*data:{
+            isActive:true,
+            activeCls:'active',
+            errorCls:'error'
+        }*/
+        data:{
+            isActive:true,
+            errorCls:'error'
+        }
+    });
+</script>

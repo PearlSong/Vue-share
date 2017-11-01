@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组语法1</title>
+</head>
+<body>
+<div id="app">
+    <div :class="[activeCls,errorCls]"></div>
+</div>
+</body>
+</html>
+<script src="../js/vue2.4.2.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            activeCls:'active',
+            errorCls:'error'
+        }
+    });
+</script>
