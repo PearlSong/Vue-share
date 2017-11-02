@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表渲染指令template</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <template v-for="book in books">
+            <li>书名：{{book.name}}</li>
+            <li>作者：{{book.author}}</li>
+        </template>
+
+    </ul>
+</div>
+</body>
+</html>
+<script src="../js/vue2.4.2.js"></script>
+<script>
+    new Vue({
+       el:'#app',
+       data:{
+           books:[
+               {name:'《Vue》',author:'xxx'},
+               {name:'《React》',author:'xxx'},
+               {name:'《Angular》',author:'xxx'}
+           ]
+       }
+    });
+</script>

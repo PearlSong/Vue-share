@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本指令</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div v-cloak>{{message}}</div>
+    <span v-once>{{message}}</span>
+    <div v-once>
+        <span>{{message}}</span>
+    </div>
+</div>
+</body>
+</html>
+<script src="../js/vue2.4.2.js"></script>
+<script>
+    new Vue({
+       el:'#app',
+       data:{
+           message:'this is an article'
+       }
+    });
+</script>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>条件渲染指令</title>
+</head>
+<body>
+<div id="app">
+    <p v-if="status===1">当status为1时显示这行</p>
+    <p v-else-if="status===2">当status为2时显示这行</p>
+    <p v-else>否则显示这行</p>
+</div>
+</body>
+</html>
+<script src="../js/vue2.4.2.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            status:1
+        }
+    })
+</script>
