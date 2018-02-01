@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组更新</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <template v-for="book in books">
+            <li>书名：{{book.name}}</li>
+            <li>作者：{{book.author}}</li>
+        </template>
+    </ul>
+</div>
+</body>
+</html>
+<script src="../js/vue2.4.2.js"></script>
+<script>
+    let app=new Vue({
+        el:'#app',
+        data:{
+            books:[{
+                name:'《vue》',
+                author:'apple'
+            },{
+                name:'《javascript.angular》',
+                author:'origin'
+            },{
+                name:'《javascript.react》',
+                author:'banana'
+            }]
+        }
+    });
+    app.books=app.books.filter(function(item){
+        return item.name.match(/javascript/);
+    });
+    app.books.splice(3,1,{name:'《vue》',
+        author:'apple'})
+</script>

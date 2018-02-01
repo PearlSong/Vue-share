@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过滤与排序</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <template v-for="book in (flag==true?filterBooks:sortBooks)">
+            <li>书名：{{book.name}}</li>
+            <li>作者：{{book.author}}</li>
+        </template>
+    </ul>
+</div>
+</body>
+</html>
+<script src="../js/vue2.4.2.js"></script>
+<script>
+    let app=new Vue({
+       el:'#app',
+       data:{
+           books:[{
+               name:'《vue》',
+               author:'apple'
+           },{
+               name:'《javascript.angular》',
+               author:'origin'
+           },{
+               name:'《javascript.react》',
+               author:'banana'
+           }],
+           flag:false
+       },
+       computed:{
+           filterBooks:function(){
+               return this.books.filter(function(book){
+                   return book.name.match(/javascript/);
+               })
+           },
+           sortBooks:function(){
+               return this.books.sort(function(a,b){
+                   return a.name.length<b.name.length;
+               })
+           }
+       }
+    });
+</script>

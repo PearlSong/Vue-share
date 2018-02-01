@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>使用props传递数据</title>
+</head>
+<body>
+<div id="app">
+  <child-component message="来自父组件的数据1111"></child-component>
+  <child1-component warning-text="提示信息"></child1-component>
+
+  <input type="text" v-model.lazy="parentMessage">
+  <child2-component :message1="parentMessage"></child2-component>
+  <child3-component message2="[1,2,3]"></child3-component>
+  <child3-component :message2="[1,2,3]"></child3-component>
+</div>
+<script src="../js/vue2.4.2.js"></script>
+<script>
+  Vue.component('child-component',{
+    props:['message'],
+    template:'<div>{{message}}</div>'
+  });
+  Vue.component('child1-component',{
+    props:['warningText'],
+    template:'<div>{{warningText}}</div>'
+  });
+  Vue.component('child2-component',{
+    props:['message1'],
+    template:'<div>{{message1}}</div>'
+  });
+  Vue.component('child3-component',{
+    props:['message2'],
+    template:'<div>{{message2.length}}</div>'
+  });
+  var app=new Vue({
+    el:'#app',
+    data:{
+      parentMessage:''
+    }
+  })
+</script>
+</body>
+</html>

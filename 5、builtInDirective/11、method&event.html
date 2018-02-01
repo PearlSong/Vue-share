@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>方法与事件</title>
+</head>
+<body>
+<div id="app">
+    {{counter}}
+    <button @click="counterAdd()">+1</button>
+    <button @click="counterAdd(10)">+10</button>
+    <a href="http://www.apple.com" @click="handleClick('禁止打开',$event)">打开链接</a>
+</div>
+</body>
+</html>
+<script src="../js/vue2.4.2.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            counter:0
+        },
+        methods:{
+            counterAdd:function(count){
+                count=count||1;
+                this.counter+=count;
+            },
+            handleClick:function(message,event){
+                event.preventDefault();
+                window.alert(message);
+            }
+        }
+    })
+</script>

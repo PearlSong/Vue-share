@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复选框</title>
+</head>
+<body>
+<div id="app">
+    <input type="checkbox" v-model="checked" id="checked">
+    <label for="checked">选择状态是:</label>
+    <br>
+    <input type="checkbox" v-model="checked" value="html" id="html">
+    <label for="html">html</label>
+    <br>
+    <input type="checkbox" v-model="checked" value="css" id="css">
+    <label for="css">css</label>
+    <br>
+    <input type="checkbox" v-model="checked" value="js" id="js">
+    <label for="js">js</label>
+    <br>
+    <p>选择的项是：{{checked}}</p>
+</div>
+<script src="../js/vue2.4.2.js"></script>
+<script>
+    var app=new Vue({
+      el:'#app',
+      data:{
+//        checked:false
+        checked:['html','js']
+      }
+    });
+</script>
+</body>
+</html>

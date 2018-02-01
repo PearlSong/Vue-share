@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>修饰符</title>
+</head>
+<body>
+<div id="app">
+  <input type="text" v-model.lazy="message">
+  {{message}}
+  <br>
+  <input type="text" v-model.number="number">
+  {{number}}
+  <br>
+  <input type="text" v-model.number="trim">
+  {{trim}}
+</div>
+<script src="../js/vue2.4.2.js"></script>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message:'',
+      number:123,
+      trim:''
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>selectList</title>
+</head>
+<body>
+<div id="app">
+  <select v-model="selected" multiple>
+    <option>html</option>
+    <option value="css">css3</option>
+    <option>js</option>
+  </select>
+  <p>您的选项是：{{selected}}</p>
+
+  <select v-model="selected1">
+    <option v-for="option in options" :value="option.value">{{option.text}}</option>
+  </select>
+  <p>您的选项是：{{selected1}}</p>
+</div>
+<script src="../js/vue2.4.2.js"></script>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      selected: ['html', 'js'],
+      selected1: 'html',
+      options: [
+        {text: 'html', value: 'html'},
+        {text: 'css', value: 'css'},
+        {text: 'js', value: 'js'}
+      ]
+    }
+  });
+</script>
+</body>
+</html>
